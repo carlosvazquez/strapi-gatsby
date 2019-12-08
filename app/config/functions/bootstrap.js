@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config({ path: require('find-config')('.env') });
 /**
  * An asynchronous bootstrap function that runs before
  * your application gets started.
