@@ -1,0 +1,37 @@
+{
+  "connection": "default",
+  "collectionName": "articles",
+  "info": {
+    "name": "article",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "Title": {
+      "minLength": 10,
+      "required": true,
+      "type": "string",
+      "unique": true
+    },
+    "content": {
+      "required": true,
+      "type": "richtext"
+    },
+    "profile": {
+      "model": "profile",
+      "via": "articles"
+    },
+    "Images": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}

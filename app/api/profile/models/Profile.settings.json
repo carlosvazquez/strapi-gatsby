@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "profiles",
+  "info": {
+    "name": "profile",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Name": {
+      "minLength": 4,
+      "required": true,
+      "type": "string"
+    },
+    "Lastname": {
+      "type": "string",
+      "minLength": 4,
+      "required": true
+    },
+    "user": {
+      "model": "user",
+      "via": "profile",
+      "plugin": "users-permissions"
+    },
+    "articles": {
+      "collection": "article",
+      "via": "profile"
+    }
+  }
+}
